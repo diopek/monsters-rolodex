@@ -21,10 +21,15 @@ class App extends Component {
   //   this.state({ searchField: e.target.value });
   // }
   // Option - 2
-  //   fetch("https://jsonplaceholder.typicode.com/users")
-  //     .then(response => response.json())
-  //     .then(users => this.setState({ monsters: users }));
+  // handleChange = (e) => {
+  //   this.state({ searchField: e.target.value });
   // }
+
+  componentDidMount() {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then(response => response.json())
+      .then(users => this.setState({ monsters: users }));
+  }
 
   onSearchChange = event => {
     this.setState({ searchField: event.target.value });
